@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #070c12;
+  --bg-card: #0e1622;
+  --bg-muted: #121c2a;
+  --gold: #d4a72c;
+  --gold-dim: #7a5e12;
+  --gold-glow: rgba(212, 167, 44, 0.12);
+  --green: #00d48f;
+  --green-dim: rgba(0, 212, 143, 0.12);
+  --red: #ff4561;
+  --red-dim: rgba(255, 69, 97, 0.12);
+  --txt-1: #e8edf5;
+  --txt-2: #6e7f99;
+  --txt-3: #3a4a60;
+  --border: rgba(255, 255, 255, 0.07);
+  --radius: 14px;
+  --nav-h: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--txt-1);
+  font-family: var(--font-syne), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-muted) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
