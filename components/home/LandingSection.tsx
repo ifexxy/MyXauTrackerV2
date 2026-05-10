@@ -76,7 +76,7 @@ export default function LandingSection() {
         </p>
         <div style={{ display: 'flex', gap: 10 }}>
           
-            href="https://wa.me/2348131560586"
+            <a href="https://wa.me/2348131560586"
             target="_blank"
             rel="noopener noreferrer"
             style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '12px 14px', background: '#25D366', color: '#000', fontFamily: 'var(--font-syne)', fontSize: 13, fontWeight: 800, borderRadius: 12, textDecoration: 'none' }}
