@@ -21,13 +21,13 @@ export default function MindsContent() {
   const [cooldownSecs, setCooldownSecs] = useState(0);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  useState(() => {
-    if (!user) return;
-    getDoc(doc(db, 'chatProfiles', user.uid)).then((snap) => {
-      if (snap.exists()) { setProfile(snap.data() as ChatProfile); setSetupDone(true); }
-      setProfileChecked(true);
-    });
+ useEffect(() => {
+  if (!user) return;
+  getDoc(doc(db, 'chatProfiles', user.uid)).then((snap) => {
+    if (snap.exists()) { setProfile(snap.data() as ChatProfile); setSetupDone(true); }
+    setProfileChecked(true);
   });
+}, [user]);
 
   const send = async () => {
     if (!text.trim() || cooldown || !user || !profile) return;
